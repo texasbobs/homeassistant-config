@@ -1,0 +1,74 @@
+#Dining Room Fire Tablet
+- platform: rest
+  name: Kiosk Device Info
+  resource: !secret rest_url_kiosk_device_info
+  json_attributes:
+  - screenBrightness
+  - isScreenOn
+  value_template: 'OK'
+
+- platform: rest
+  name: fire_dining
+  json_attributes:
+  - batteryLevel
+  - kioskMode
+  - screenBrightness
+  - motionDetectorState
+  - maintenanceMode
+  - appFreeMemory
+  - appUsedMemory
+  - totalFreeMemory
+  - totalUsedMemory
+  - hostname4
+  - ip4
+  - mac
+  - locationLatitude
+  - locationLongitude
+  - locationAltitude
+  - startUrl
+  - currentPage
+  resource: !secret fire_dining
+  value_template: '{{ value_json.isScreenOn }}'
+  
+- platform: template
+  sensors:
+    fire_dining_battery_level:
+      friendly_name: "fire_tablet_dining_battery_level"
+      unit_of_measurement: '%'
+      value_template: "{{ states.sensor.fire_dining.attributes.batteryLevel }}"
+    
+# Darksky Config
+- platform: darksky
+  api_key: !secret darksky_api_key
+  scan_interval: 300
+  forecast:
+    - 0
+    - 1
+    - 2
+    - 3 
+  hourly_forecast:
+    - 0
+    - 1
+  monitored_conditions:
+    - summary
+    - icon
+    - nearest_storm_distance
+    - precip_type
+    - precip_intensity
+    - precip_probability
+    - temperature
+    - apparent_temperature
+    - dew_point
+    - wind_speed
+    - wind_bearing
+    - cloud_cover
+    - humidity
+    - pressure
+    - visibility
+    - ozone
+    - hourly_summary
+    - daily_summary
+    - moon_phase
+    - alerts
+    - sunrise_time
+    - sunset_time

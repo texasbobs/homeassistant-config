@@ -1,0 +1,284 @@
+- id: '1598135001355'
+  alias: Main Lights On
+  description: ''
+  trigger:
+  - event: sunset
+    offset: -01:00:00
+    platform: sun
+  condition: []
+  action:
+  - scene: scene.main_lights_on
+  - device_id: d51f3a90df754251a3e7d8dc46326617
+    domain: switch
+    entity_id: switch.jasco_products_12722_on_off_relay_switch_switch
+    type: turn_on
+  mode: single
+- id: '1598135112531'
+  alias: Main Lights Off
+  description: ''
+  trigger:
+  - at: 01:00
+    platform: time
+  condition: []
+  action:
+  - scene: scene.main_lights_off
+  - device_id: 3a96b504fddf4259aa9d5be3cda88e6f
+    domain: switch
+    entity_id: switch.jasco_products_45609_on_off_relay_switch_switch_3
+    type: turn_off
+  - device_id: d51f3a90df754251a3e7d8dc46326617
+    domain: switch
+    entity_id: switch.jasco_products_12722_on_off_relay_switch_switch
+    type: turn_off
+  mode: single
+- id: '1598135403659'
+  alias: Outside Lights On
+  description: ''
+  trigger:
+  - event: sunset
+    offset: --00:30:00
+    platform: sun
+  condition: []
+  action:
+  - device_id: 49ed82c796d3400abc985e6cd451c372
+    domain: switch
+    entity_id: switch.jasco_products_45609_on_off_relay_switch_switch_2
+    type: turn_on
+  mode: single
+- id: '1598148378661'
+  alias: Outside Lights Off
+  description: ''
+  trigger:
+  - event: sunrise
+    offset: '30'
+    platform: sun
+  condition: []
+  action:
+  - device_id: 49ed82c796d3400abc985e6cd451c372
+    domain: switch
+    entity_id: switch.jasco_products_45609_on_off_relay_switch_switch_2
+    type: turn_off
+  mode: single
+- id: '1599962897756'
+  alias: Bedroom Light On
+  description: ''
+  trigger:
+  - at: '21:00'
+    platform: time
+  condition: []
+  action:
+  - brightness_pct: 100
+    device_id: 1a59a278ed9749a8934970e0832f8ba9
+    domain: light
+    entity_id: light.bedroom
+    type: turn_on
+  mode: single
+- id: '1599966634142'
+  alias: Bedroom Light Off
+  description: ''
+  trigger:
+  - at: '23:00'
+    platform: time
+  condition: []
+  action:
+  - device_id: 1a59a278ed9749a8934970e0832f8ba9
+    domain: light
+    entity_id: light.bedroom
+    type: turn_off
+  mode: single
+- id: '1599966769129'
+  alias: Bedroom Light Dim
+  description: ''
+  trigger:
+  - at: '22:00'
+    platform: time
+  condition:
+  - condition: state
+    entity_id: light.bedroom
+    state: 'on'
+  action:
+  - brightness_pct: 40
+    device_id: 1a59a278ed9749a8934970e0832f8ba9
+    domain: light
+    entity_id: light.bedroom
+    type: turn_on
+  mode: single
+- id: '1601993860893'
+  alias: Turn on lights when dark
+  description: ''
+  trigger:
+  - below: 40
+    device_id: aa5312fe547d4f32835716e90b90e933
+    domain: sensor
+    entity_id: sensor.zooz_zse40_4_in_1_sensor_luminance
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+    platform: device
+    type: value
+  - event: sunset
+    platform: sun
+  - below: 30
+    device_id: aa5312fe547d4f32835716e90b90e933
+    domain: sensor
+    entity_id: sensor.zooz_zse40_4_in_1_sensor_luminance
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+    platform: device
+    type: value
+  condition:
+  - condition: and
+    conditions:
+    - after: 09:00
+      before: '23:59'
+      condition: time
+  action:
+  - scene: scene.main_lights_on
+  - device_id: d51f3a90df754251a3e7d8dc46326617
+    domain: switch
+    entity_id: switch.jasco_products_12722_on_off_relay_switch_switch
+    type: turn_on
+  mode: single
+- id: '1601994045594'
+  alias: Turn on light for motion
+  description: ''
+  trigger:
+  - entity_id: sensor.zooz_zse40_4_in_1_sensor_burglar
+    from: '0'
+    platform: state
+  condition: []
+  action:
+  - brightness_pct: 10
+    device_id: 896e804be1e74e31a4e590807e600589
+    domain: light
+    entity_id: light.desk_light
+    type: turn_on
+  mode: single
+- id: '1601995210818'
+  alias: Turn off lights when bright
+  description: ''
+  trigger:
+  - above: 50
+    device_id: aa5312fe547d4f32835716e90b90e933
+    domain: sensor
+    entity_id: sensor.zooz_zse40_4_in_1_sensor_luminance
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+    platform: device
+    type: value
+  condition: []
+  action:
+  - scene: scene.main_lights_off
+  - device_id: d51f3a90df754251a3e7d8dc46326617
+    domain: switch
+    entity_id: switch.jasco_products_12722_on_off_relay_switch_switch
+    type: turn_off
+  mode: single
+- id: '1602018646749'
+  alias: Turn off light for motion
+  description: ''
+  trigger:
+  - entity_id: sensor.zooz_zse40_4_in_1_sensor_burglar
+    for: '300'
+    platform: state
+    to: '0'
+  condition:
+  - after: 01:00
+    condition: time
+  action:
+  - device_id: 896e804be1e74e31a4e590807e600589
+    domain: light
+    entity_id: light.desk_light
+    type: turn_off
+  mode: single
+- id: '1602731931547'
+  alias: Trigger alarm while armed home or away
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.back_door
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.front_door
+    to: 'on'
+  condition:
+    condition: or
+    conditions:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: armed_away
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: armed_home
+  action:
+    service: alarm_control_panel.alarm_trigger
+    entity_id: alarm_control_panel.home_alarm
+- id: '1602731931548'
+  alias: Alarm Triggered
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.home_alarm
+    to: triggered
+  action:
+  - service: notify.notify
+    data:
+      message: '!Alarm Triggered!'
+  - service: python_script.fully
+    data:
+      triggered: 'yes'
+- id: '1602731931549'
+  alias: Door/Window Opened or Disarmed
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.back_door
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.front_door
+    to: 'on'
+  condition:
+    condition: or
+    conditions:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: arming
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: disarmed
+  action:
+  - service: python_script.fully
+    data:
+      opened: 'yes'
+- id: '1602731931550'
+  alias: Alarm Disarmed
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.home_alarm
+    to: disarmed
+  action:
+  - service: python_script.fully
+    data:
+      disarmed: 'yes'
+- id: '1602731931551'
+  alias: Alarmed Home
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.home_alarm
+    to: armed_home
+  action:
+  - service: python_script.fully
+    data:
+      home: 'yes'
+- id: '1602731931552'
+  alias: Alarmed Away
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.home_alarm
+    to: arming
+  action:
+  - service: python_script.fully
+    data:
+      away: 'yes'

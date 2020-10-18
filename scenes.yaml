@@ -1,0 +1,498 @@
+- id: '1598148053800'
+  name: Normal Lights
+  entities:
+    light.bar_light:
+      brightness: 131
+      color_temp: 366
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Bar Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+    light.bar_light_2:
+      brightness: 124
+      color_temp: 366
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Bar Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+    light.buffet_light:
+      brightness: 255
+      color_temp: 379
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Buffet light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+    light.chair_light:
+      brightness: 251
+      color_temp: 349
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Chair Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+    light.desk_light:
+      brightness: 120
+      color_temp: 409
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Desk Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+    light.entry_light:
+      brightness: 128
+      color_temp: 333
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Entry Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+    light.fireplace:
+      brightness: 124
+      color_temp: 366
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Fireplace
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+    light.fireplace_2:
+      brightness: 121
+      color_temp: 366
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Fireplace
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+    light.sofa_light:
+      brightness: 255
+      color_temp: 333
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Sofa Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+- id: '1598148183790'
+  name: Main Lights Off
+  entities:
+    light.bar_light:
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Bar Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'off'
+      supported_features: 63
+    light.bar_light_2:
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Bar Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'off'
+      supported_features: 63
+    light.buffet_light:
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Buffet light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'off'
+      supported_features: 63
+    light.chair_light:
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Chair Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'off'
+      supported_features: 63
+    light.desk_light:
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Desk Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'off'
+      supported_features: 63
+    light.entry_light:
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Entry Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'off'
+      supported_features: 63
+    light.fireplace:
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Fireplace
+      max_mireds: 500
+      min_mireds: 153
+      state: 'off'
+      supported_features: 63
+    light.fireplace_2:
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Fireplace
+      max_mireds: 500
+      min_mireds: 153
+      state: 'off'
+      supported_features: 63
+    light.sofa_light:
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Sofa Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'off'
+      supported_features: 63
+- id: '1599511044585'
+  name: Movie Lights
+  entities:
+    light.bar_light:
+      brightness: 131
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Bar Light
+      hs_color:
+      - 230.363
+      - 75.686
+      max_mireds: 500
+      min_mireds: 153
+      rgb_color:
+      - 62
+      - 92
+      - 255
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.157
+      - 0.099
+    light.bar_light_2:
+      brightness: 124
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Bar Light
+      hs_color:
+      - 230.363
+      - 75.686
+      max_mireds: 500
+      min_mireds: 153
+      rgb_color:
+      - 62
+      - 92
+      - 255
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.157
+      - 0.099
+    light.buffet_light:
+      brightness: 255
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Buffet light
+      hs_color:
+      - 230.363
+      - 75.686
+      max_mireds: 500
+      min_mireds: 153
+      rgb_color:
+      - 62
+      - 92
+      - 255
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.157
+      - 0.099
+    light.chair_light:
+      brightness: 120
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Chair Light
+      hs_color:
+      - 230.363
+      - 75.686
+      max_mireds: 500
+      min_mireds: 153
+      rgb_color:
+      - 62
+      - 92
+      - 255
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.157
+      - 0.099
+    light.desk_light:
+      brightness: 39
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Desk Light
+      hs_color:
+      - 230.363
+      - 75.686
+      max_mireds: 500
+      min_mireds: 153
+      rgb_color:
+      - 62
+      - 92
+      - 255
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.157
+      - 0.099
+    light.entry_light:
+      brightness: 128
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Entry Light
+      hs_color:
+      - 230.363
+      - 75.686
+      max_mireds: 500
+      min_mireds: 153
+      rgb_color:
+      - 62
+      - 92
+      - 255
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.157
+      - 0.099
+    light.fireplace:
+      brightness: 77
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Fireplace
+      hs_color:
+      - 230.363
+      - 75.686
+      max_mireds: 500
+      min_mireds: 153
+      rgb_color:
+      - 62
+      - 92
+      - 255
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.157
+      - 0.099
+    light.fireplace_2:
+      brightness: 89
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Fireplace
+      hs_color:
+      - 230.363
+      - 75.686
+      max_mireds: 500
+      min_mireds: 153
+      rgb_color:
+      - 62
+      - 92
+      - 255
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.157
+      - 0.099
+    light.sofa_light:
+      brightness: 118
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Sofa Light
+      hs_color:
+      - 230.363
+      - 75.686
+      max_mireds: 500
+      min_mireds: 153
+      rgb_color:
+      - 62
+      - 92
+      - 255
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.157
+      - 0.099
+- id: '1599967146884'
+  name: Main Lights Dim
+  entities:
+    light.bar_light:
+      brightness: 28
+      color_temp: 366
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Bar Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+    light.bar_light_2:
+      brightness: 37
+      color_temp: 366
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Bar Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+    light.buffet_light:
+      brightness: 140
+      color_temp: 379
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Buffet light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+    light.chair_light:
+      brightness: 114
+      color_temp: 370
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Chair Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+    light.desk_light:
+      brightness: 81
+      color_temp: 409
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Desk Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+    light.entry_light:
+      brightness: 67
+      color_temp: 354
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Entry Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+    light.fireplace:
+      brightness: 41
+      color_temp: 366
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Fireplace
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+    light.fireplace_2:
+      brightness: 36
+      color_temp: 366
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Fireplace
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+    light.sofa_light:
+      brightness: 114
+      color_temp: 362
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Sofa Light
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63

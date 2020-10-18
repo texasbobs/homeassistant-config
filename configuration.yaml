@@ -1,0 +1,85 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+  
+# Include Themes
+frontend:
+  themes: !include themes.yaml
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+sensor: !include sensors.yaml
+python_script:
+logger:
+  default: info
+
+#Discover some devices automatically
+discovery:
+
+# Amcrest Camera Config
+amcrest:
+  - host: 192.168.2.10
+    username: !secret amcrest_user
+    password: !secret amcrest_password
+    
+#Alarm Panel
+alarm_control_panel:
+  - platform: manual
+    name: Home Alarm
+    code: !secret alarm_code
+    code_arm_required: false
+    trigger_time: 300
+    disarmed:
+      trigger_time: 0
+    armed_home:
+      arming_time: 0
+      delay_time: 0
+    armed_away:
+      arming_time: 60
+      delay_time: 60
+      
+rest_command:
+  kiosk_command:
+    url: !secret rest_url_kiosk_command
+  kiosk_play_sound:
+    url: !secret rest_url_sound_command
+
+#Konnected
+konnected:
+  access_token: !secret konnected_token
+  api_host: http://192.168.2.23:8123
+  devices:
+    - id: bcddc2fe7113
+      binary_sensors:
+        - zone: 1
+          type: door
+          name: Front Door
+        - zone: 2
+          type: window
+          name: Window 2
+        - zone: 3
+          type: window
+          name: Window 3
+        - zone: 4
+          type: door
+          name: Back Door
+        - zone: 5
+          type: window
+          name: Window 5
+    - id: bcddc2fe5aa4
+      binary_sensors:
+        - zone: 1
+          type: window
+          name: Not Connected
+      switches:
+        - zone: 6
+          name: Beeper
+          momentary: 200
+          pause: 50
+          repeat: 3
