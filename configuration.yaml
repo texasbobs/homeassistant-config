@@ -15,9 +15,12 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 sensor: !include sensors.yaml
+#Enable the use of Python scripts
 python_script:
-logger:
-  default: info
+
+#Set logging level
+# logger:
+#   default: info
 
 #Discover some devices automatically
 discovery:
@@ -44,6 +47,7 @@ alarm_control_panel:
       arming_time: 60
       delay_time: 60
       
+#Creates rest_command services that can be called by the python scripts or dev tools
 rest_command:
   kiosk_command:
     url: !secret rest_url_kiosk_command
@@ -55,7 +59,7 @@ konnected:
   access_token: !secret konnected_token
   api_host: http://192.168.2.23:8123
   devices:
-    - id: bcddc2fe7113
+    - id: bcddc2fe7113 #mac id
       binary_sensors:
         - zone: 1
           type: door
