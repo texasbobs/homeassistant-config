@@ -15,19 +15,9 @@ disarmed = data.get("disarmed")
 home = data.get("home")
 away = data.get("away")
 
-
 start_url = True
 # Play a sound  
-
-# add service_data to be passed to the service that contains the command and url
-#
-# setAudioVolume&level=100&stream=1
-# playSound&url=file%3A%2F%2F%2Fstorage%2Femulated%2F0%2FNotifications%2Fdoor.mp3&loop=false
-# playSound&url=file%3A%2F%2F%2Fstorage%2Femulated%2F0%2FNotifications%2Fdefault.mp3&loop=true
-# textToSpeech&text=The+House+Alarm+Has+Been+Disarmed
-# textToSpeech&text=The+House+Alarm+Has+Been+armed.+You+have+sixty+seconds+to+exit.
-# textToSpeech&text=The+House+Alarm+Has+Been+armed.++goodnight.
-
+# might add setAudioVolume&level=100&stream=1 to set levels differently
 
 if triggered is not None:
     service_data = {"ip": 26, "cmd": "playSound&url=file%3A%2F%2F%2Fstorage%2Femulated%2F0%2FRingtones%2Ftng_red_alert3.mp3&loop=true"}
@@ -43,7 +33,7 @@ if opened is not None:
     hass.services.call("rest_command", "kiosk_play_sound", service_data, False)    
     start_url = False
 
-if disarmed is not None:
+if disarmed is not None: #Sending a non-looping sound in case the alarm was previously triggered. TTS will not stop a playSound that is looping.
     service_data = {"ip": 26, "cmd": "playSound&url=file%3A%2F%2F%2Fstorage%2Femulated%2F0%2FRingtones%2Finput_ok_3_clean.mp3&loop=false"}
     hass.services.call("rest_command", "kiosk_play_sound", service_data, False)
     service_data = {"ip": 27, "cmd": "playSound&url=file%3A%2F%2F%2Fstorage%2Femulated%2F0%2FRingtones%2Finput_ok_3_clean.mp3&loop=false"}

@@ -1,7 +1,22 @@
 fully:
   icon: "mdi-settings"
-  description: 'Up-date settings on Dining Tablet, entering no data with reload start URL'
+  description: 'Send alarm commands or update settings on the Fire Tablets, entering no data with reload start URL'
   fields:
+    triggered:
+      description: 'Sets the alarm status to actively being triggered. The alarm will sound.'
+      example: 'true'
+    opened:
+      description: 'Plays a sound when a window or door is opened.'
+      example: 'true'
+    disarmed:
+      description: 'Stops any looping sounds from a triggered state and plays a disarmed message.'
+      example: 'true'
+    home:
+      description: 'Plays a armed at home message.'
+      example: 'true'
+    away:
+      description: 'Plays a armed away message.'
+      example: 'true'
     brightness:
       description: 'The brightness of the tablet backlight from 0-255, 0 the system default on the tablet'
       example: 160
